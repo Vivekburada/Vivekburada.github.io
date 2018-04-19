@@ -1,6 +1,4 @@
-<?php
-session_start();
-  ?>
+
 <html>
 <head>
 <title>Dashboard</title>
@@ -135,28 +133,13 @@ border-color: #000066;
 </head>
 <body>
 <center><h1>Dashboard</h1></center>
-<center><h3> <?php echo "Welcome ".$_SESSION['user']."";?></h3></center>
-<?php include 'connect.php'; ?>
-<?php include 'd_title.php'; ?>
+<center><h3></h3></center>
+
 
 
 <div id='dash'>
 <center>  <h1 > This is the Admin page </h1></center>
-<?php
-$user=$_SESSION['user'];
-$conn=connect();
-$result = mysqli_query($conn,"SELECT userid,password FROM auth WHERE userid='$user'");
 
-// If the query completed without errors, fetch a result
-if ($result) {
-  $row = mysqli_fetch_assoc($result);
-
-  $userid=$row['userid'];
-  $password=$row['password'];
-}
-// Otherwise display the error
-else echo "An error occurred: " . mysql_error();
-?>
 <h2 id='h2'><?php echo "<b>Username :</b> $userid"; ?></h2>
 <h2 id='h2'><?php echo "<b>Password :</b> $password"; ?></h2>
 </div>
